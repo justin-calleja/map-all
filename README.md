@@ -68,5 +68,5 @@ A Mapper is a similar callback to what you'd pass to [Array.map](https://develop
 [standard-image]: https://img.shields.io/badge/code-standard-brightgreen.svg?style=flat-square
 [standard-url]: https://github.com/feross/standard
 
-[license-image]: http://img.shields.io/npm/l/@justinc/map-all.svg?style=flat-square
+[license-image]: https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square
 [license-url]: ./LICENSE

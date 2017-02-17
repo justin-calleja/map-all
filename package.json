@@ -1,6 +1,6 @@
 {
   "name": "@justinc/map-all",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Run multiple map functions against Iterable in one go",
   "main": "src/index.js",
   "scripts": {

@@ -21,7 +21,7 @@
     "iterable"
   ],
   "author": "Justin Calleja <calleja.justin@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/justin-calleja/map-all/issues"
   },

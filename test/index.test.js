@@ -48,6 +48,10 @@ test('Each mapper should be called with array iterating over as 3nd param', t =>
   t.deepEqual(mapAll([(el, idx, arr) => arr.join('|')], ['a', 'b']), [ ['a|b', 'a|b'] ])
 })
 
+test('works as expected when mappers return null / undefined', t => {
+  t.deepEqual(mapAll([() => null, () => undefined], [1, 2, 3]), [ [null, null, null], [undefined, undefined, undefined] ])
+})
+
 test('sample data', t => {
   let arr = [
     'item_id1',

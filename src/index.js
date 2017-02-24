@@ -1,18 +1,15 @@
 /**
- * A Mapper is a similar callback to what you'd pass to [Array.map](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
- * @callback Mapper
- * @param  {*} currentValue The current element being processed in the array.
- * @param  {number} index The index of the current element being processed in the array.
- * @param  {Array<*>}  array The array map was called upon.
+ * @module @justinc/map-all
  */
 
 /**
- * Calls each mapper obtained from `mapperIterable` on each element obtained from `iterable`.
- * In the given result, there is an array for each found mapper. The result of mapper[0] is at
- * result[0] etc…
- * @param  {Iterable<Mapper>} mappers  [description]
- * @param  {Iterable<*>} iterable [description]
- * @return {Array<Array<*>>}          [description]
+ * Calls each mapper obtained from `mappers` on each element obtained from `iterable`.
+ * In the given result, there is an array for each found mapper. The result of mappers[0] is at
+ * results[0] etc…
+ * @param  {Iterable<Mapper>} mappers
+ * @param  {Iterable<*>} iterable
+ * @return {Array<Array<*>>}
+ * @see {@link module:@justinc/jsdocs.Mapper}
  */
 function mapAll (mappersIterable, iterable) {
   let mappers = Array.from(mappersIterable)

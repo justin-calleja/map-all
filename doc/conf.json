@@ -1,0 +1,8 @@
+{
+  "source": {
+    "include": [
+      "node_modules/@justinc/jsdocs/typedefs/index.jsdoc",
+      "node_modules/@justinc/jsdocs/typedefs/Mapper.jsdoc"
+    ]
+  }
+}

@@ -2,10 +2,10 @@
   "name": "@justinc/map-all",
   "version": "1.0.2",
   "description": "Run multiple map functions against Iterable in one go",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "readme": "rm -rf README.md && npm run jsdoc2md",
-    "jsdoc2md": "jsdoc2md --template readmeTpl.hbs -c doc/conf.json --files src/* >> README.md",
+    "jsdoc2md": "jsdoc2md --template readmeTpl.hbs -c doc/conf.json --files lib/* >> README.md",
     "lint": "standard",
     "postversion": "npm publish --access=public && git push --follow-tags",
     "prepublish": "npm run readme && npm run lint && npm run test",
@@ -19,6 +19,10 @@
     "map",
     "all",
     "iterable"
+  ],
+  "files": [
+    "lib",
+    "README.md"
   ],
   "author": "Justin Calleja <calleja.justin@gmail.com>",
   "license": "MIT",

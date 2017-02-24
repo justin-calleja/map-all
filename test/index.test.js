@@ -1,5 +1,5 @@
 import test from 'ava'
-import mapAll from '../src'
+import mapAll from '..'
 
 const plus1 = (x) => x + 1
 const appendIndex = (x, i) => x + `${i}`

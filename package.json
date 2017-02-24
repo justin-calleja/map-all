@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "readme": "rm -rf README.md && npm run jsdoc2md",
-    "jsdoc2md": "jsdoc2md --template README.hbs -c doc/conf.json --files src/* >> README.md",
+    "jsdoc2md": "jsdoc2md --template readmeTpl.hbs -c doc/conf.json --files src/* >> README.md",
     "lint": "standard",
     "postversion": "npm publish --access=public && git push --follow-tags",
     "prepublish": "npm run readme && npm run lint && npm run test",

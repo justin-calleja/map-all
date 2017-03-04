@@ -17,39 +17,39 @@ test('should work given non-array mappers and Iterable parameters', t => {
     yield 2
     yield 3
   }
-  t.deepEqual(mapAll(mapperIterable, iterable), [ [2, 3, 4], ['10', '21', '32'], [3, 4, 5] ])
+  t.deepEqual(mapAll(mapperIterable)(iterable), [ [2, 3, 4], ['10', '21', '32'], [3, 4, 5] ])
 })
 
 test('works as expected given [] as an iterable', t => {
-  t.deepEqual(mapAll([plus1, appendIndex], []), [[], []])
+  t.deepEqual(mapAll([plus1, appendIndex])([]), [[], []])
 })
 
 test('works as expected given [] as an iterable mapper and iterable', t => {
-  t.deepEqual(mapAll([], []), [])
+  t.deepEqual(mapAll([])([]), [])
 })
 
 test('works as expected given [] as an iterable mapper', t => {
-  t.deepEqual(mapAll([], [1, 2, 3]), [])
+  t.deepEqual(mapAll([])([1, 2, 3]), [])
 })
 
 test('should not affect either of the given iterables', t => {
   let mappers = [plus1, appendIndex]
   let arr = ['id1', 'id2', 'id1', 'id1']
-  mapAll(mappers, arr)
+  mapAll(mappers)(arr)
   t.deepEqual(mappers, [plus1, appendIndex])
   t.deepEqual(arr, ['id1', 'id2', 'id1', 'id1'])
 })
 
 test('Each mapper should be called with index as 2nd param', t => {
-  t.deepEqual(mapAll([appendIndex], ['a', 'b']), [ ['a0', 'b1'] ])
+  t.deepEqual(mapAll([appendIndex])(['a', 'b']), [ ['a0', 'b1'] ])
 })
 
 test('Each mapper should be called with array iterating over as 3nd param', t => {
-  t.deepEqual(mapAll([(el, idx, arr) => arr.join('|')], ['a', 'b']), [ ['a|b', 'a|b'] ])
+  t.deepEqual(mapAll([(el, idx, arr) => arr.join('|')])(['a', 'b']), [ ['a|b', 'a|b'] ])
 })
 
 test('works as expected when mappers return null / undefined', t => {
-  t.deepEqual(mapAll([() => null, () => undefined], [1, 2, 3]), [ [null, null, null], [undefined, undefined, undefined] ])
+  t.deepEqual(mapAll([() => null, () => undefined])([1, 2, 3]), [ [null, null, null], [undefined, undefined, undefined] ])
 })
 
 test('sample data', t => {
@@ -64,7 +64,7 @@ test('sample data', t => {
     'itemInstance_id4',
     'itemInstance_id5'
   ]
-  t.deepEqual(mapAll([plus1, appendIndex, (x) => x.substring(4)], arr), [
+  t.deepEqual(mapAll([plus1, appendIndex, (x) => x.substring(4)])(arr), [
     [
       'item_id11',
       'item_id11',

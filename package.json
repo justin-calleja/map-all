@@ -4,8 +4,10 @@
   "description": "Run multiple map functions against Iterable in one go",
   "main": "lib/index.js",
   "scripts": {
-    "readme": "rm -rf README.md && npm run jsdoc2md",
-    "jsdoc2md": "jsdoc2md --template readmeTpl.hbs -c doc/conf.json --files lib/* >> README.md",
+    "copy:tutorials": "cp node_modules/@justinc/jsdocs/tutorials/curry.md doc/tutorials",
+    "clean:readme": "rimraf README.md && rimraf doc/tutorials && mkdirp doc/tutorials",
+    "prereadme": "npm run clean:readme && npm run copy:tutorials",
+    "readme": "jsdoc2md --template readmeTpl.hbs -c doc/conf.json --files lib/* >> README.md",
     "lint": "standard",
     "postversion": "npm publish --access=public && git push --follow-tags",
     "prepublish": "npm run readme && npm run lint && npm run test",
@@ -31,9 +33,11 @@
   },
   "homepage": "https://github.com/justin-calleja/map-all#readme",
   "devDependencies": {
-    "@justinc/jsdocs": "*",
+    "@justinc/jsdocs": "^1.0.0",
     "ava": "^0.18.1",
     "jsdoc-to-markdown": "^3.0.0",
+    "mkdirp": "0.5.1",
+    "rimraf": "2.6.1",
     "standard": "^8.6.0"
   }
 }

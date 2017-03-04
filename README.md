@@ -15,6 +15,13 @@ mapAll([(x) => x + 1, (x) => x + 2])([1, 2, 3])
 // [ [2, 3, 4], [3, 4, 5] ]
 ```
 
+### Tutorials
+
+TODO: A JSDoc 3 tutorial (re currying) needs to be injected in this README.md. For now there's only a link:
+
+* tutorial: [curry.md](https://github.com/justin-calleja/jsdocs/blob/master/tutorials/curry.md)
+* issue: [jsdoc2md/jsdoc-to-markdown#115](https://github.com/jsdoc2md/jsdoc-to-markdown/issues/115)
+
 ## Modules
 
 <dl>

@@ -7,7 +7,7 @@
     "copy:tutorials": "cp node_modules/@justinc/jsdocs/tutorials/curry.md doc/tutorials",
     "clean:readme": "rimraf README.md && rimraf doc/tutorials && mkdirp doc/tutorials",
     "prereadme": "npm run clean:readme && npm run copy:tutorials",
-    "readme": "jsdoc2md --template readmeTpl.hbs -c doc/conf.json --files lib/* >> README.md",
+    "readme": "jsdoc2md --no-cache --template readmeTpl.hbs -c doc/conf.json --files lib/* >> README.md",
     "lint": "standard",
     "postversion": "npm publish --access=public && git push --follow-tags",
     "prepublish": "npm run readme && npm run lint && npm run test",
